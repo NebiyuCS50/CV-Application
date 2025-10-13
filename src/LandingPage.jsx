@@ -21,8 +21,13 @@ const LandingPage = () => {
         <div className="border n"></div>
         <h1>
           Create a Professional CV in just a <br />
-          few Minutes, Absolutely Free!
+          <span>few Minutes, Absolutely Free!</span>
         </h1>
+        <p>Just fill in the form and your CV ready to use </p>
+        <div className="button-group">
+          <button>Create CV Now</button>
+          <button>See Demo</button>
+        </div>
       </main>
     </div>
   );
