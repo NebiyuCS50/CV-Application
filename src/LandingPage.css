@@ -193,10 +193,12 @@ body.modal-open main {
   background: white;
   border-radius: 12px;
   padding: 30px;
-  width: 400px;
+  width: 50vw;
   max-width: 90%;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   animation: fadeIn 0.3s ease;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 .cv-modal {
   width: 90%;

@@ -16,16 +16,31 @@
 }
 
 .general-info input {
+  padding: 12px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  outline: none;
+  resize: none;
+  font-family: "Roboto", sans-serif;
   background-color: white;
-  color: black;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  color: #333;
 }
 .general-info textarea {
+  padding: 12px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  outline: none;
+  resize: none;
+  font-family: "Roboto", sans-serif;
   background-color: white;
-  color: black;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  color: #333;
+}
+.general-info input:focus,
+.general-info textarea:focus {
+  border-color: #4b6bfb;
+  box-shadow: 0 0 0 3px rgba(75, 107, 251, 0.1);
 }
