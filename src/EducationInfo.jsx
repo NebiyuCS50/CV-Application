@@ -1,6 +1,8 @@
+import React from "react";
+import "./Education.css";
 const EducationInfo = ({ formData, handleArrayChange, addEntry }) => {
   return (
-    <div>
+    <div className="education-info">
       <h2>Education</h2>
       {formData.education.map((edu, index) => (
         <div key={index}>
@@ -34,7 +36,7 @@ const EducationInfo = ({ formData, handleArrayChange, addEntry }) => {
           })
         }
       >
-        Add Education
+        + Add Education
       </button>
     </div>
   );
