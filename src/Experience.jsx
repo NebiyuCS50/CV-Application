@@ -1,8 +1,8 @@
 import React from "react";
-
+import "./General.css";
 const Experience = ({ formData, handleChange }) => {
   return (
-    <div>
+    <div className="general-info">
       <h2>Practical Experience</h2>
       <label>
         Company Name:
@@ -34,11 +34,19 @@ const Experience = ({ formData, handleChange }) => {
         ></textarea>
       </label>
       <label>
-        Date of Work:
+        Start Date:
         <input
           type="date"
           name="dateOfWork"
-          value={formData.dateOfWork}
+          value={formData.startDate}
+          onChange={handleChange}
+          required
+        />
+        End Date:
+        <input
+          type="date"
+          name="dateOfWork"
+          value={formData.endDate}
           onChange={handleChange}
           required
         />

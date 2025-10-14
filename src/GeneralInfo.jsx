@@ -1,8 +1,9 @@
 import React from "react";
+import "./General.css";
 
 const GeneralInfo = ({ formData, handleChange }) => {
   return (
-    <div>
+    <div className="general-info">
       <h2>General Information</h2>
       <label>
         Name:
@@ -33,6 +34,15 @@ const GeneralInfo = ({ formData, handleChange }) => {
           onChange={handleChange}
           required
         />
+      </label>
+      <label>
+        About Me:
+        <textarea
+          name="aboutMe"
+          value={formData.aboutMe}
+          onChange={handleChange}
+          required
+        ></textarea>
       </label>
     </div>
   );
