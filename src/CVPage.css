@@ -1,0 +1,121 @@
+.cv-container {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  height: 80%;
+}
+
+.header-content {
+  box-sizing: border-box;
+  background-color: rgb(17, 7, 61);
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding-left: 40px;
+  margin-top: 10px;
+}
+.header-content > div {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  margin-left: 60px;
+}
+
+.cv-header-img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  margin-top: 0px;
+  margin-left: 50px;
+}
+
+.header-content1 {
+  color: white;
+  font-size: 60px;
+  margin: 0;
+}
+
+.header-content3 {
+  color: white;
+  font-size: 25px;
+  margin: 5px 0 0 0;
+}
+.info {
+  background-color: rgb(240, 240, 240);
+  padding-top: 40px;
+  /* border: 2px solid red; */
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* controls space between sections neatly */
+}
+.info > .header-content2 {
+  font-size: 24px;
+  margin: 20px 20px 0;
+  color: rgb(40, 40, 41);
+}
+#line1 {
+  border: 1px solid rgb(40, 40, 41);
+  width: 90%;
+  margin-left: 20px;
+}
+.contact-info,
+.education-info {
+  color: rgb(40, 40, 41);
+  font-size: 10px;
+  margin-left: 20px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  margin-bottom: 0;
+}
+.contact-info p,
+.education-info p {
+  margin: 3px 0;
+}
+
+.right-side {
+  flex: 1;
+  padding: 20px;
+  margin-top: -10px;
+  width: 70%;
+  height: 100%;
+  border: 2px solid blue;
+}
+.main {
+  display: flex;
+  color: rgb(40, 40, 41);
+}
+#line2 {
+  border: 1px solid rgb(40, 40, 41);
+  width: 95%;
+  margin: 10px auto;
+}
+.about-me {
+  color: rgb(40, 40, 41);
+  font-size: 15px;
+  margin-left: 20px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  margin-bottom: 0;
+}
+.right-side > .header-content2 {
+  font-size: 24px;
+  margin: 20px 20px 0;
+  color: rgb(40, 40, 41);
+}
+.right-h3 {
+  color: rgb(40, 40, 41);
+  font-size: 15px;
+  margin-left: 20px;
+}
