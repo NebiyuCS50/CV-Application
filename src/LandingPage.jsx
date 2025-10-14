@@ -6,9 +6,28 @@ import image_1 from "./assets/pexels-danxavier-1239291.jpg";
 import image_2 from "./assets/pexels-olly-733872.jpg";
 import image_3 from "./assets/pexels-stefanstefancik-91227.jpg";
 import FormPage from "./FormPage";
+import CVPage from "./CVPage";
 
 const LandingPage = () => {
   const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    education: [{ schoolName: "", titleOfStudy: "", dateOfStudy: "" }],
+    qualifications: [{ title: "", institution: "", yearObtained: "" }],
+    experience: [
+      {
+        companyName: "",
+        positionTitle: "",
+        mainTasks: "",
+        startDate: "",
+        endDate: "",
+      },
+    ],
+    aboutMe: "",
+  });
+  const [showCVPage, setShowCVPage] = useState(false);
   return (
     <>
       <div>
@@ -38,11 +57,7 @@ const LandingPage = () => {
           </h1>
           <p>Just fill in the form and your CV ready to use </p>
           <div className="button-group">
-            {!showForm ? (
-              <button onClick={() => setShowForm(true)}>Create CV Now</button>
-            ) : (
-              <FormPage />
-            )}
+            <button onClick={() => setShowForm(true)}>Create CV Now</button>
             <button>See Demo</button>
           </div>
         </main>
@@ -50,7 +65,19 @@ const LandingPage = () => {
       {showForm && (
         <div className="modal-overlay">
           <div className="modal">
-            <FormPage onClose={() => setShowForm(false)} />
+            <FormPage
+              onClose={() => setShowForm(false)}
+              formData={formData}
+              setFormData={setFormData}
+              onSubmitComplete={() => setShowCVPage(true)}
+            />
+          </div>
+        </div>
+      )}
+      {showCVPage && (
+        <div className="modal-overlay">
+          <div className="modal cv-modal">
+            <CVPage data={formData} onClose={() => setShowCVPage(false)} />
           </div>
         </div>
       )}
