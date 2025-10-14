@@ -1,5 +1,20 @@
 .form-buttons {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
   margin-top: 20px;
+}
+.formBtn {
+  background-color: #534caf;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+.formBtn:hover {
+  background-color: #3b2f7b;
 }
