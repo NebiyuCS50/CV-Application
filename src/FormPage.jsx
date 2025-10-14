@@ -11,23 +11,73 @@ const FormPage = ({ onClose, formData, setFormData, onSubmitComplete }) => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  // In FormPage.jsx
+
   const handleArrayChange = (section, index, e) => {
+    if (!Array.isArray(formData[section])) return;
+
     const newArray = [...formData[section]];
-    newArray[index][e.target.name] = e.target.value;
-    setFormData({ ...formData, [section]: newArray });
+    newArray[index] = {
+      ...newArray[index],
+      [e.target.name]: e.target.value,
+    };
+
+    setFormData({
+      ...formData,
+      [section]: newArray,
+    });
   };
 
   const addEntry = (section, newEntry) => {
-    setFormData({ ...formData, [section]: [...formData[section], newEntry] });
+    if (!Array.isArray(formData[section])) return;
+
+    setFormData({
+      ...formData,
+      [section]: [...formData[section], newEntry],
+    });
   };
 
-  const handleNext = () => setCurrentStep((prev) => prev + 1);
+  const handleNext = () => {
+    if (!validateCurrentStep()) {
+      alert("Please fill all required fields before continuing.");
+      return;
+    }
+    setCurrentStep(currentStep + 1);
+  };
   const handlePrev = () => setCurrentStep((prev) => prev - 1);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onClose();
     onSubmitComplete();
+  };
+  const validateCurrentStep = () => {
+    switch (currentStep) {
+      case 0:
+        return formData.name && formData.email && formData.phone;
+      case 1:
+        return formData.education.every(
+          (edu) => edu.schoolName && edu.titleOfStudy && edu.dateOfStudy
+        );
+      case 2:
+        return formData.qualifications.every(
+          (qual) => qual.title && qual.institution && qual.yearObtained
+        );
+      case 3:
+        return formData.experience.every(
+          (exp) =>
+            exp.companyName &&
+            exp.positionTitle &&
+            exp.mainTasks &&
+            exp.startDate &&
+            exp.endDate
+        );
+      case 4:
+        return formData.aboutMe.trim() !== "";
+      default:
+        return false;
+    }
   };
 
   const renderStep = () => {
@@ -69,18 +119,20 @@ const FormPage = ({ onClose, formData, setFormData, onSubmitComplete }) => {
 
       <div className="form-buttons">
         {currentStep > 0 && (
-          <button type="button" onClick={handlePrev}>
+          <button type="button" onClick={handlePrev} className="formBtn">
             Previous
           </button>
         )}
-        {currentStep < 3 ? (
-          <button type="button" onClick={handleNext}>
+        {currentStep < 4 ? (
+          <button type="button" onClick={handleNext} className="formBtn">
             Next
           </button>
         ) : (
-          <button type="submit">Submit</button>
+          <button type="submit" className="formBtn">
+            Submit
+          </button>
         )}
-        <button type="button" onClick={onClose}>
+        <button type="button" onClick={onClose} className="formBtn">
           Close
         </button>
       </div>
