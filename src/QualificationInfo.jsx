@@ -1,8 +1,8 @@
 import React from "react";
-
+import "./General.css";
 const QualificationInfo = ({ formData, handleChange }) => {
   return (
-    <div>
+    <div className="general-info">
       <h2>Qualifications</h2>
       <label>
         Title:
