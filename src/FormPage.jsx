@@ -3,7 +3,6 @@ import GeneralInfo from "./GeneralInfo";
 import EducationInfo from "./EducationInfo";
 import Experience from "./Experience";
 import QualificationInfo from "./QualificationInfo";
-import "./FormPage.css";
 
 const FormPage = ({ onClose, formData, setFormData, onSubmitComplete }) => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -11,8 +10,6 @@ const FormPage = ({ onClose, formData, setFormData, onSubmitComplete }) => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  // In FormPage.jsx
 
   const handleArrayChange = (section, index, e) => {
     if (!Array.isArray(formData[section])) return;
@@ -114,25 +111,40 @@ const FormPage = ({ onClose, formData, setFormData, onSubmitComplete }) => {
   };
 
   return (
-    <form className="form-page" onSubmit={handleSubmit}>
+    <form className="" onSubmit={handleSubmit}>
       {renderStep()}
 
-      <div className="form-buttons">
+      <div className="flex items-center justify-center gap-4 mt-5 sticky bottom-0 bg-white p-4 z-10">
         {currentStep > 0 && (
-          <button type="button" onClick={handlePrev} className="formBtn">
+          <button
+            type="button"
+            onClick={handlePrev}
+            className="bg-[#534caf] text-white border-none py-2.5 px-5 rounded-md cursor-pointer text-center hover:bg-[#3b2f7b]"
+          >
             Previous
           </button>
         )}
         {currentStep < 4 ? (
-          <button type="button" onClick={handleNext} className="formBtn">
+          <button
+            type="button"
+            onClick={handleNext}
+            className="bg-[#534caf] text-white border-none py-2.5 px-5 rounded-md cursor-pointer text-center hover:bg-[#3b2f7b]"
+          >
             Next
           </button>
         ) : (
-          <button type="submit" className="formBtn">
+          <button
+            type="submit"
+            className="bg-[#534caf] text-white border-none py-2.5 px-5 rounded-md cursor-pointer text-center hover:bg-[#3b2f7b]"
+          >
             Submit
           </button>
         )}
-        <button type="button" onClick={onClose} className="formBtn">
+        <button
+          type="button"
+          onClick={onClose}
+          className="bg-[#534caf] text-white border-none py-2.5 px-5 rounded-md cursor-pointer text-center hover:bg-[#3b2f7b]"
+        >
           Close
         </button>
       </div>
